@@ -3,3 +3,14 @@ input{
     border-width: 3px;
     padding: 6px 8px;
 }
+
+.error{
+    margin-top: 4px;
+    color: red;
+}
+
+form{
+    display:flex;
+    flex-direction: inherit;
+    align-items: inherit;
+}

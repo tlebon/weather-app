@@ -25,14 +25,56 @@ export interface ILocationWeather {
     }
     timezone: number;
     visibility: number;
-    weather: {
-        description: string;
-        icon: string;
-        id: number;
-        main: string;
-    }[]
+    weather: IWeather[]
     wind: {
         speed: number;
         deg: number;
     }
+}
+
+export interface IWeeklyWeather{
+    daily: IDailyWeather[];
+    lat: number;
+    lon: number;
+    timezone: string;
+    timezone_offset:number;
+}
+
+
+interface IDailyWeather{
+    clouds: number;
+    dew_point: number;
+    dt: number;
+    feels_like:IDayTimes
+    humidity: number;
+    pop: number;
+    pressure: number;
+    rain: number;
+    sunrise: number;
+    sunset: number;
+    temp: ITempTimes;
+    uvi: number;
+    weather: IWeather[];
+    wind_deg: number;
+    wind_speed: number;
+}
+
+
+interface IDayTimes{
+        day: number;
+        night: number;
+        eve: number;
+        morn: number;
+}
+
+interface ITempTimes extends IDayTimes{
+    min: string;
+    max: string;
+}
+
+interface IWeather{ 
+        description: string;
+        icon: string;
+        id: number;
+        main: string;
 }

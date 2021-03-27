@@ -1,14 +1,18 @@
 import * as React from 'react';
 import Entry from './components/Entry'
 import './App.css';
-import { ILocationWeather } from './types/api';
+import { ILocationWeather, IWeeklyWeather } from './types/api';
 
 function App() {
-  const [location, setLocation] = React.useState<string>('')
+  const [location, setLocation] = React.useState<string>('');
+  const [weather, setWeather] = React.useState<IWeeklyWeather>();
+  const [error, setError] = React.useState<string>('');
   const APIKEY = process.env.REACT_APP_WEATHER_API;
+
   React.useEffect(() => {
     document.title = `${location} Weather To Go`
-    getWeather(location)
+    setError('');
+    getWeather(location);
     //api call to go here
   }, [location])
 
@@ -18,24 +22,25 @@ function App() {
       //set string to a const
       //consider passing in the location/key as obj
       const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${APIKEY}`)
-      const current: ILocationWeather= await response.json()
-      const {lat, lon}= current.coord;
-      console.log(current)
+      const current: ILocationWeather = await response.json()
+      const { lat, lon } = current?.coord;
+      const sevenResponse = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly&appid=${APIKEY}`)
+      const sevenCurrent: IWeeklyWeather = await sevenResponse.json()
+      setWeather(sevenCurrent)
     }
     catch (error) {
-      console.error(error.message)
+      setError('Whoops that didnt work, try again.')
     }
   }
 
 
   return (
     <div className="App">
-      <header>
+      <header className='header'>
         <h1> Weather To Go </h1>
         <h2 className='city'>{location}</h2>
       </header>
-      <Entry setLocation={setLocation} />
-
+      <Entry setLocation={setLocation} error={error} />
     </div>
   );
 }
