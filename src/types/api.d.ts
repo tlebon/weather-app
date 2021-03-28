@@ -32,49 +32,57 @@ export interface ILocationWeather {
     }
 }
 
-export interface IWeeklyWeather{
+export interface IWeeklyWeatherResponse {
     daily: IDailyWeather[];
     lat: number;
     lon: number;
     timezone: string;
-    timezone_offset:number;
+    timezone_offset: number;
 }
 
 
-interface IDailyWeather{
+interface IDailyWeather {
     clouds: number;
     dew_point: number;
     dt: number;
-    feels_like:IDayTimes
+    feels_like: IDayTimeTemps
     humidity: number;
     pop: number;
     pressure: number;
-    rain: number;
+    rain?: number;
     sunrise: number;
     sunset: number;
-    temp: ITempTimes;
+    temp: IDailyTemps;
     uvi: number;
     weather: IWeather[];
     wind_deg: number;
     wind_speed: number;
 }
 
-
-interface IDayTimes{
-        day: number;
-        night: number;
-        eve: number;
-        morn: number;
+export interface IDailyTransWeather {
+    day: string;
+    sunrise: string;
+    sunset: string;
+    high: number;
+    low: number;
+    weather: IWeather[];
 }
 
-interface ITempTimes extends IDayTimes{
-    min: string;
-    max: string;
+interface IDayTimeTemps {
+    day: number;
+    night: number;
+    eve: number;
+    morn: number;
 }
 
-interface IWeather{ 
-        description: string;
-        icon: string;
-        id: number;
-        main: string;
+interface IDailyTemps extends IDayTimeTemps {
+    min: number;
+    max: number;
+}
+
+interface IWeather {
+    description: string;
+    icon: string;
+    id: number;
+    main: string;
 }
