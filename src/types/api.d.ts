@@ -39,7 +39,7 @@ export interface IWeeklyWeatherResponse {
     timezone: string;
     timezone_offset: number;
     // alert?:{
- //consider adding alert
+    //consider adding alert
     // }
 }
 
@@ -63,7 +63,11 @@ interface IDailyWeather {
 }
 
 export interface IDailyTransWeather {
-    day: string;
+    day: {
+        numeric: number;
+        month: string;
+        weekday: string;
+    };
     sunrise: string;
     sunset: string;
     high: number;

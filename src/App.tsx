@@ -21,7 +21,7 @@ function App() {
     } else {
       getWeather(location)
         .then(data => setWeather(data))
-        .catch(error => setError(error));
+        .catch(error => setError(error.message));
     }
   }, [location])
 
@@ -34,8 +34,10 @@ function App() {
         <h1> Weather To Go </h1>
         <h2 className='city'>{location}</h2>
       </header>
-      <Entry setLocation={setLocation} error={error} />
-      <WeeklyWeather weather={weather} />
+      <main>
+        <Entry setLocation={setLocation} error={error} />
+        <WeeklyWeather weather={weather} />
+      </main>
     </div>
   );
 }
