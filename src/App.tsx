@@ -1,11 +1,13 @@
 import * as React from 'react';
 import Entry from './components/Entry'
 import './App.css';
-import { ILocationWeather, IWeeklyWeather } from './types/api';
+import { IDailyTransWeather, ILocationWeather, IWeeklyWeatherResponse } from './types/api';
+import WeeklyWeather from './components/WeeklyWeather';
+import { apiTransformer } from './utils/transformer';
 
 function App() {
   const [location, setLocation] = React.useState<string>('');
-  const [weather, setWeather] = React.useState<IWeeklyWeather>();
+  const [weather, setWeather] = React.useState<IDailyTransWeather[]>([]);
   const [error, setError] = React.useState<string>('');
   const APIKEY = process.env.REACT_APP_WEATHER_API;
 
@@ -19,16 +21,20 @@ function App() {
 
   async function getWeather(location: string) {
     try {
+      if(!location){
+      return setWeather([])
+      }
       //set string to a const
-      //consider passing in the location/key as obj
+      //consider passing in the location/key as obj- is this possible?
       const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${APIKEY}`)
       const current: ILocationWeather = await response.json()
       const { lat, lon } = current?.coord;
       const sevenResponse = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly&appid=${APIKEY}`)
-      const sevenCurrent: IWeeklyWeather = await sevenResponse.json()
-      setWeather(sevenCurrent)
+      const sevenCurrent: IWeeklyWeatherResponse = await sevenResponse.json()
+      setWeather(apiTransformer(sevenCurrent))
     }
     catch (error) {
+      setWeather([])
       setError('Whoops that didnt work, try again.')
     }
   }
@@ -41,6 +47,7 @@ function App() {
         <h2 className='city'>{location}</h2>
       </header>
       <Entry setLocation={setLocation} error={error} />
+      <WeeklyWeather weather={weather} />
     </div>
   );
 }

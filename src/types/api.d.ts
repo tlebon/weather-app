@@ -38,6 +38,9 @@ export interface IWeeklyWeatherResponse {
     lon: number;
     timezone: string;
     timezone_offset: number;
+    // alert?:{
+ //consider adding alert
+    // }
 }
 
 
@@ -65,7 +68,7 @@ export interface IDailyTransWeather {
     sunset: string;
     high: number;
     low: number;
-    weather: IWeather[];
+    weather: IWeather;
 }
 
 interface IDayTimeTemps {

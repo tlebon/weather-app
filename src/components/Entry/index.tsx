@@ -11,7 +11,7 @@ const Entry: React.FunctionComponent<IEntry> = (props) => {
 
     return (
         <form onSubmit={(e) => { e.preventDefault(); setLocation(input) }}>
-            <input value={input} onChange={(e) => setInput(e.target.value)} />
+            <input placeholder='Input a city'value={input} onChange={(e) => setInput(e.target.value)} />
             <div className='error'>{error}</div>
         </form>
     )

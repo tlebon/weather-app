@@ -1,16 +1,24 @@
 import * as React from 'react';
+import { IDailyTransWeather } from '../../types/api';
+import DailyWeather from './Daily';
+import './index.css';
 
-interface IEntry {
-    setLocation: React.Dispatch<React.SetStateAction<string>>
+interface IWeeklyWeather {
+    weather: IDailyTransWeather[];
 }
 
-const Entry: React.FunctionComponent<IEntry> = (props) => {
-    const { setLocation } = props;
-    const [input, setInput] = React.useState<string>('')
-    
-    return (<form onSubmit={(e) => { e.preventDefault(); setLocation(input) }}>
-        <input value={input} onChange={(e) => setInput(e.target.value)} />
-    </form>)
+
+const WeeklyWeather: React.FunctionComponent<IWeeklyWeather> = (props) => {
+    const { weather } = props;
+
+    if (weather.length) {
+        return (
+            <div className='weather-box'>
+                {weather.map((day) => <DailyWeather day={day} />)}
+            </div>
+        )
+    }
+    else return null;
 }
 
-export default Entry;
+export default WeeklyWeather;

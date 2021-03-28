@@ -17,7 +17,7 @@ export const apiTransformer = (weather: IWeeklyWeatherResponse): IDailyTransWeat
         sunset: solarConversion(day.sunset),
         high: kToCTemp(day.temp.max),
         low: kToCTemp(day.temp.min),
-        weather: day.weather,
+        weather: day.weather[0],
     }))
 
     return daily;

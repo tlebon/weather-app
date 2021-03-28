@@ -1,0 +1,21 @@
+.weather-box{
+    display:flex;
+    flex-direction: row;
+    border-radius: 10px;
+    border: black solid 3px;
+    box-shadow: 5px 3px 3px rgba(80, 79, 79, 0.253);
+    margin-top: 3em;
+}
+
+.weather-card{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    min-width: 10em;
+    min-height: 7em;
+    margin: 5px;
+    border-radius: 10px;
+    border: black solid 3px;
+    box-shadow: 3px 1px 1px rgba(80, 79, 79, 0.253);
+}
