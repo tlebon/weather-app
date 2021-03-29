@@ -1,5 +1,3 @@
-
-//consider transformer?
 export interface ILocationWeather {
     base: string;
     clouds: { all: number };
@@ -38,8 +36,8 @@ export interface IWeeklyWeatherResponse {
     lon: number;
     timezone: string;
     timezone_offset: number;
-    // alert?:{
-    //consider adding alert
+    // alerts?:{
+    //consider adding alerts
     // }
 }
 
@@ -72,7 +70,7 @@ export interface IDailyTransWeather {
     sunset: string;
     high: number;
     low: number;
-    tempUnit: string; // TODO: consider fixing this typing
+    isCelcius:boolean;
     weather: IWeather;
 }
 

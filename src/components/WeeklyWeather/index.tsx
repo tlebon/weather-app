@@ -10,24 +10,24 @@ interface IWeeklyWeather {
 
 
 const WeeklyWeather: React.FunctionComponent<IWeeklyWeather> = (props) => {
-    const { weather } = props;
-    const [focused, setFocused] = React.useState<IDailyTransWeather>();
+	const { weather } = props;
+	const [focused, setFocused] = React.useState<IDailyTransWeather>();
 
-    const weatherMap = weather.map((day) => (
-        <React.Fragment key={day.day.numeric}>
-            <DailyWeather day={day}
-                setDay={setFocused} />
-        </React.Fragment>
-    ));
-    if (weather.length) {
-        return (
-            <div className='weather-box'>
-                {focused ? <WeatherDetails day={focused}
-                    setDay={setFocused} /> : weatherMap}
-            </div>
-        );
-    }
-    else return null;
+	const weatherMap = weather.map((day) => (
+		<React.Fragment key={day.day.numeric}>
+			<DailyWeather day={day}
+				setDay={setFocused} />
+		</React.Fragment>
+	));
+	if (weather.length) {
+		return (
+			<div className='weather-box'>
+				{focused ? <WeatherDetails day={focused}
+					setDay={setFocused} /> : weatherMap}
+			</div>
+		);
+	}
+	else return null;
 };
 
 export default WeeklyWeather;
