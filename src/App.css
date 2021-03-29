@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Permanent+Marker&family=DM+Sans&display=swap');
 
 .App {
+	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin: 5em 15em;
+	margin: 0;
 	font-family: 'Roboto', sans-serif;
 }
 
@@ -29,4 +30,13 @@ main {
 	display: flex;
 	flex-direction:column;
 	align-items: inherit;
+}
+
+@media only screen and (max-width:850px) {
+.city{
+	margin-bottom: 0.415em;
+}
+.title{
+	margin-bottom: 0.335em;
+}
 }

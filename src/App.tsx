@@ -31,7 +31,7 @@ function App() {
   return (
     <div className="App">
       <header className='header'>
-        <h1> Weather To Go </h1>
+        <h1 className='title'> Weather To Go </h1>
         <h2 className='city'>{location}</h2>
       </header>
       <main>

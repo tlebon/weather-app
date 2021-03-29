@@ -7,6 +7,7 @@
 	border: black solid 3px;
 	box-shadow: 5px 3px 3px rgba(80, 79, 79, 0.253);
 	margin-top: 3em;
+	margin-bottom: 1em;
 }
 /* .weather-box:active:after {
 	transform: rotateY(180deg);
@@ -26,7 +27,6 @@
 	border-radius: 10px;
 	border: black solid 3px;
 	box-shadow: 3px 1px 1px rgba(80, 79, 79, 0.253);
-	/* overflow: hidden; */
 }
 @media only screen and (min-width:1300px) {
 	.weather-box{
@@ -37,13 +37,16 @@
 @media only screen and (max-width:850px) {
 	.weather-box{
 		flex-direction: column;
-		min-width: 20em;
+		margin-top: 1.5em;
+	}
+	.weather-card{
+		min-width: 60vw;
 	}
 }
 .image-wrap {
 	position: relative;
-	width: 6em;
-	height: 6em;
+	width: 8em;
+	height: 8em;
 }
 .card-image {
 	position: absolute;
