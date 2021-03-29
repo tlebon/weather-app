@@ -10,8 +10,8 @@ const Entry: React.FunctionComponent<IEntry> = (props) => {
     const [input, setInput] = React.useState<string>('')
 
     return (
-        <form onSubmit={(e) => { e.preventDefault(); setLocation(input) }}>
-            <input autoComplete='addresslevel2' placeholder='Input a city'value={input} onChange={(e) => setInput(e.target.value)} />
+        <form onSubmit={(e) => { e.preventDefault(); setLocation(input) }} onBlur={() => setLocation(input)}>
+            <input autoComplete='addresslevel2' placeholder='Input a city' value={input} onChange={(e) => setInput(e.target.value)} />
             <div className='error'>{error}</div>
         </form>
     )
