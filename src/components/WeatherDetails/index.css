@@ -43,9 +43,6 @@ min-width: 80vw;
 .weather-detail-card{
 min-width: inherit;
 }
-.weather-detail>div{
-    /* margin-left: 1em; */
-}
 
 .capitalize{
     text-transform: capitalize;

@@ -23,7 +23,7 @@
     "rules": {
         "indent": [
             "error",
-            "tab"
+            2
         ],
         "linebreak-style": [
             "error",
@@ -39,6 +39,21 @@
         ],
         "react/prop-types": [
             0
+        ],
+        "react/jsx-sort-props": [
+            "warn"
+        ],
+        "object-property-newline": [
+            1,
+            {
+                "allowAllPropertiesOnSameLine": false
+            }
+        ],
+        "react/jsx-max-props-per-line": [
+            1,
+            {
+                "maximum": 1
+            }
         ]
     }
 }
