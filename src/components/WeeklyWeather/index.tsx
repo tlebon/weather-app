@@ -10,17 +10,19 @@ interface IWeeklyWeather {
 
 
 const WeeklyWeather: React.FunctionComponent<IWeeklyWeather> = (props) => {
-    const { weather } = props;
-    const [focused, setFocused] = React.useState<IDailyTransWeather>();
-    const weatherMap = weather.map((day) => <DailyWeather day={day} setDay={setFocused} />)
-    if (weather.length) {
-        return (
-            <div className='weather-box'>
-                {focused ? <WeatherDetails day={focused} setDay={setFocused} /> : weatherMap}
-            </div>
-        )
-    }
-    else return null;
-}
+	const { weather } = props;
+	const [focused, setFocused] = React.useState<IDailyTransWeather>();
+	// TODO: consider fixing this also
+	// eslint-disable-next-line react/jsx-key  
+	const weatherMap = weather.map((day) => <DailyWeather day={day} setDay={setFocused} />);
+	if (weather.length) {
+		return (
+			<div className='weather-box'>
+				{focused ? <WeatherDetails day={focused} setDay={setFocused} /> : weatherMap}
+			</div>
+		);
+	}
+	else return null;
+};
 
 export default WeeklyWeather;
