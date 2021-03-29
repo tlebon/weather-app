@@ -32,7 +32,7 @@ main {
 	align-items: inherit;
 }
 
-@media only screen and (max-width:850px) {
+@media only screen and (max-width:500px) {
 .city{
 	margin-bottom: 0.415em;
 }

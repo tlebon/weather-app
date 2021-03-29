@@ -28,13 +28,13 @@
 	border: black solid 3px;
 	box-shadow: 3px 1px 1px rgba(80, 79, 79, 0.253);
 }
-@media only screen and (min-width:1300px) {
+@media only screen and (min-width:1150px) {
 	.weather-box{
 		flex-wrap:nowrap;
 	}
 }
 
-@media only screen and (max-width:850px) {
+@media only screen and (max-width:500px) {
 	.weather-box{
 		flex-direction: column;
 		margin-top: 1.5em;
