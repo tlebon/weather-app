@@ -17,6 +17,7 @@ export const apiTransformer = (weather: IWeeklyWeatherResponse): IDailyTransWeat
         sunset: solarConversion(day.sunset),
         high: kToCTemp(day.temp.max),
         low: kToCTemp(day.temp.min),
+        tempUnit: 'C',
         weather: day.weather[0],
     }))
 
@@ -27,6 +28,7 @@ export const apiTransformer = (weather: IWeeklyWeatherResponse): IDailyTransWeat
 const dateConversion = (date: number) => {
     const WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
     return (
         {
             numeric: new Date(date * 1000).getDate(),

@@ -37,6 +37,7 @@
 @media only screen and (max-width:850px) {
 	.weather-box{
 		flex-direction: column;
+		min-width: 20em;
 	}
 }
 .image-wrap {
@@ -64,4 +65,16 @@
 	box-shadow: 4px 2px 2px rgba(32, 32, 32, 0.75) inset;
 	transition: box-shadow 0.5s step-end;
 	background-color: inherit;
+}
+
+.short-details{
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 1em;
+}
+
+h3{
+	margin:.5em;
+	
 }

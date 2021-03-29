@@ -10,14 +10,14 @@ interface IWeatherDetails {
 const WeatherDetails: React.FunctionComponent<IWeatherDetails> = (props) => {
     const { day, setDay } = props;
     const { day: daily } = day;
-    return (<div className='weather-detail' onClick={() => setDay(undefined)}><div>
+    return (<div aria-pressed='false' className='weather-detail' role='button' onClick={() => setDay(undefined)} tabIndex={0}><div>
         <img src={`/assets/${day.weather.icon}.png`} alt={day.weather.main} />
     </div>
         <div>
             <h1>{daily.weekday} {daily.month} {daily.numeric}</h1>
-            <h3 className='capitalize'>{day.weather.description}</h3>
-            <h3>High:{day.high}</h3>
-            <h3>Low: {day.low}</h3>
+            <h2 className='capitalize'>{day.weather.description}</h2>
+            <h3>High:{day.high} º{day.tempUnit}</h3>
+            <h3>Low: {day.low} º{day.tempUnit}</h3>
             <h4>Sunrise: {day.sunrise}</h4>
             <h4>Sunset: {day.sunset}</h4>
         </div>

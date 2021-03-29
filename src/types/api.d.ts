@@ -72,6 +72,7 @@ export interface IDailyTransWeather {
     sunset: string;
     high: number;
     low: number;
+    tempUnit: string; // TODO: consider fixing this typing
     weather: IWeather;
 }
 
