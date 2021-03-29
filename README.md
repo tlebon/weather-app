@@ -1,5 +1,7 @@
 # Welcome to Weather To Go
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bf7429c7-588e-44a3-8145-49e5ce9af33b/deploy-status)](https://app.netlify.com/sites/musing-einstein-5bf189/deploys)
+
 This is a simple weather app made in react with Typescript using the [OpenWeatherMap API](https://openweathermap.org/api/one-call-api#how).
 
 ## Design Decisions

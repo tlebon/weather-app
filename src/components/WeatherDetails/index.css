@@ -23,7 +23,11 @@
 	transition: box-shadow 0.5s step-end;
 	background-color: inherit;
 }
-
+@media only screen and (max-width:850px) {
+	.weather-detail{
+flex-direction: column;
+	}
+}
 .weather-detail>div{
     margin-left: 1em;
 }
