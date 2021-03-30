@@ -8,7 +8,7 @@ import getWeather from './utils/api';
 function App(): JSX.Element {
     const [location, setLocation] = React.useState<string>('');
     const [weather, setWeather] = React.useState<IDailyTransWeather[]>([]);
-    const [units, setUnits] = React.useState<string>('metric');
+    // const [units, setUnits] = React.useState<string>('metric');
     const [error, setError] = React.useState<string>('');
     const initialRender = React.useRef(true);
 
@@ -20,7 +20,7 @@ function App(): JSX.Element {
         if (initialRender.current) {
             initialRender.current = false;
         } else {
-            getWeather(location, units)
+            getWeather(location, 'metric')
                 .then(data => setWeather(data))
                 .catch(error => setError(error.message));
         }
