@@ -25,7 +25,8 @@ const DailyWeather: React.FunctionComponent<IDailyProps> = (props) => {
             </div>
 
             <div className='short-details'>
-                <h2>{day.day.weekday}</h2>
+                <h2 className={day.current ? 'current-title' : undefined}>{day.day.weekday}</h2>
+                {day.current && <h3>Currently {day.current} º{tempUnit(day)}</h3>}
                 <h3>{day.high} º{tempUnit(day)}</h3>
                 <h3>{day.low} º{tempUnit(day)}</h3>
             </div>
