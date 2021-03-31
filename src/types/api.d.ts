@@ -70,7 +70,8 @@ export interface IDailyTransWeather {
     sunset: string;
     high: number;
     low: number;
-    isCelcius:boolean;
+    current?: number;
+    isCelcius: boolean;
     weather: IWeather;
 }
 

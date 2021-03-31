@@ -40,3 +40,23 @@ main {
 	margin-bottom: 0.335em;
 }
 }
+
+.units-button{
+	border-radius: 5px;
+	border: black solid 3px;
+	box-shadow: 3px 1px 1px rgba(80, 79, 79, 0.253);
+	margin-top: 3em;
+	margin-bottom: 1em;
+	background-color: white;
+}
+
+.units-button:hover {
+	box-shadow: 3px 1px 1px rgba(32, 32, 32, 0.75);
+	background-color: rgb(235, 235, 235);
+	transition: box-shadow background-color 0.5s step-start;
+}
+.units-button:active {
+	box-shadow: 3px 1px 1px rgba(32, 32, 32, 0.75) inset;
+	transition: box-shadow 0.5s step-end;
+	background-color: inherit;
+}

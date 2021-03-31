@@ -1,10 +1,10 @@
 import { apiTransformer } from './transformer';
-import APIRESPONSE from './mocks/mockApiResponse';
+import { CITYAPIRESPONSE, APIRESPONSE } from './mocks/mockApiResponse';
 
 describe('transformWeatherForFE', () => {
     test('transforms the weather correctly', () => {
-        const current = APIRESPONSE.daily[0].weather[0];
-        const transformedMock = apiTransformer(APIRESPONSE, current, 'metric');
+        const current = CITYAPIRESPONSE;
+        const transformedMock = apiTransformer(APIRESPONSE, current, true);
 
         expect(transformedMock).toMatchObject([{
             day: {

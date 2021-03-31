@@ -5,7 +5,7 @@ describe('Api call', () => {
     test('throws an error if theres no location', () => {
 
         expect(
-            getWeather('', 'metric')
+            getWeather('', true)
         ).rejects.toThrow('Enter a city please!');
 
     });
@@ -13,7 +13,7 @@ describe('Api call', () => {
     test('throws an error if the location doesnt exist', () => {
 
         expect(
-            getWeather('asda', 'metric')
+            getWeather('asda', true)
         ).rejects.toThrow();
 
     });
