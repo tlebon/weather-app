@@ -4,30 +4,7 @@
 
 ![main-screen](screenshots/live.png)
 
-This is a simple weather app made in react with Typescript using the [OpenWeatherMap API](https://openweathermap.org/api/one-call-api#how).
-
-## Design Decisions
-
-The app was quickly boostrapped with [Create React App](https://github.com/facebook/create-react-app), with typescript added. 
-
-The App was originally storyboarded in Figma, you can see the designs [here](https://www.figma.com/file/UG53tJM60rPdiTw6LxFqsn/Weather-app?node-id=0%3A1) or in the [screenshots folder](screenshots)
-
-
-As the open weather map api charges 40$ for a month to get the nice endpoints with longer time scales +town recognition (unless I misread), I simply chained two calls together to save time. 
-
-It also allows options for icons for different weather. I elected to design my own simple ones instead.
-
-
-The project is deployed on netlify, you can see a live instance running [here](https://musing-einstein-5bf189.netlify.app/).
-
-Your free openweathermap APIKEY should go in your .env file if you would like to run locally, please refer to the .env.example file.
-
-## Areas for improvement
-As with any project theres several things that could be improved.
-
-I elected to do the ui from scratch, without using a framework. While i like this decision, it could be optimised more. 
-
-
+This is a simple weather app made in React with Typescript using the [OpenWeatherMap API](https://openweathermap.org/api/one-call-api#how).
 
 ## Available Scripts
 
@@ -43,12 +20,41 @@ In the project directory, you can run:
 
 ### `npm run build` - this will build for production, i dont think youll need that. 
 
-## Getting Started with Create React App
+### NOTE: Your free openweathermap APIKEY should go in your .env file if you would like to run locally, please refer to the .env.example file.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Learn More About CRA
+The App was originally storyboarded in Figma, you can see the designs [here](https://www.figma.com/file/UG53tJM60rPdiTw6LxFqsn/Weather-app?node-id=0%3A1) or in the [screenshots folder](screenshots)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The project is deployed on netlify, you can see a live instance running [here](https://musing-einstein-5bf189.netlify.app/).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Design Decisions
+
+The app was quickly boostrapped with [Create React App](https://github.com/facebook/create-react-app) with typescript, to get me moving quickly on building.
+
+From the initial design elected to show all the days in one section instead of showing the current day as separate. The current day does however display the current temperature and image depending on time. 
+
+As the open weather map api charges 40$ for a month to get the nice endpoints with longer time scales +town recognition (unless I misread), I simply chained two calls together to save time. Theres certainly other solutions for this, possibly geolocation.
+
+The weather api also allows options for icons for different weather. I elected to design my own simple ones instead.
+
+
+## Areas for improvement / Extensions
+As with any project theres several things that could be improved.
+
+I elected to do the ui from scratch, without using a framework. While i like this decision, it could be optimised more and there is obviously lots of room to improve the design. 
+
+I think the main gap for me right now is the testing and the error handling. I elected to spend a majority of the time building the app and not focus as much on the unit tests/error as I expect only a small range of interactions within the app. In production obviously these would be extended. Full component tests as well as unit tests for all the functions seem like an immediate improvement.
+
+I would also extend aria-tags and correct any semantic html errors that are still remaining. 
+
+I would consider moving to a css-in-js solution to extend typing to my classes. 
+
+Theres static text as well, which isnt super great and obviously the website is only in english for now. The api does include language support, I would include a dropdown or use current location and include translations for my text with i18n. 
+
+I included eslint to theoretically help me format but my default formatter was fighting with it so I ended up just turning off the spacing, the eslint does help with some other issues though!
+
+Finally I considered a day/night mode. 
+
+Sort of long-winded but I did put a good amount of time into this, even though there are still many things left over!
+
+Thanks!
