@@ -36,9 +36,13 @@ export interface IWeeklyWeatherResponse {
     lon: number;
     timezone: string;
     timezone_offset: number;
-    // alerts?:{
-    //consider adding alerts
-    // }
+    alerts?:{
+        sender_name:string;
+        event:string;
+        start:number;
+        end:number;
+        description:string;
+    }
 }
 
 

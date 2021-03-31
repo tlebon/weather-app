@@ -14,7 +14,7 @@ const WeeklyWeather: React.FunctionComponent<IWeeklyWeather> = (props) => {
     const [focused, setFocused] = React.useState<IDailyTransWeather>();
 
     React.useEffect(() => {
-        setFocused(weather.find((day) => day.day.numeric === focused?.day.numeric));
+        setFocused(weather.find((forecast) => forecast.day.numeric === focused?.day.numeric));
     }, [weather]);
 
     const weatherMap = weather.map((day) => (

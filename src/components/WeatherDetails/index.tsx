@@ -11,7 +11,7 @@ interface IWeatherDetails {
 const WeatherDetails: React.FunctionComponent<IWeatherDetails> = (props) => {
     const { day, setDay } = props;
     const { day: daily } = day;
-    const currently = `Currently ${day.weather.description} & ${day.current} º${tempUnit(day)}`;
+    const CURRENTLY = `Currently ${day.weather.description} & ${day.current} º${tempUnit(day)}`;
 
     return (<div
         aria-pressed='false'
@@ -26,7 +26,7 @@ const WeatherDetails: React.FunctionComponent<IWeatherDetails> = (props) => {
         </div>
         <div className='weather-details-card'>
             <h1 className='split-header'><span>{daily.weekday} </span><span>{daily.month} {daily.numeric}</span></h1>
-            <h2 className='capitalize'>{day.current ? currently : day.weather.description}</h2>
+            <h2 className='capitalize'>{day.current ? CURRENTLY : day.weather.description}</h2>
 
             <h3>High: {day.high} º{tempUnit(day)}</h3>
             <h3>Low: {day.low} º{tempUnit(day)}</h3>

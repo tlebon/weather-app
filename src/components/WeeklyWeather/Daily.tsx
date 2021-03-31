@@ -7,7 +7,7 @@ interface IDailyProps {
     day: IDailyTransWeather;
     setDay: React.Dispatch<React.SetStateAction<IDailyTransWeather | undefined>>
 }
-//map image to card based on 
+
 const DailyWeather: React.FunctionComponent<IDailyProps> = (props) => {
     const { day, setDay } = props;
 
