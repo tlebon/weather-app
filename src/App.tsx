@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Entry from './components/Entry';
 import './App.css';
-import { IDailyTransWeather } from './types/api';
+import { IDailyTransWeather } from './types';
 import WeeklyWeather from './components/WeeklyWeather';
 import getWeather from './utils/api';
 

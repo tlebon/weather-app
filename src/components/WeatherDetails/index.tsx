@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IDailyTransWeather } from '../../types/api';
+import { IDailyTransWeather } from '../../types';
 import { tempUnit } from '../../utils/transformer';
 import './index.css';
 

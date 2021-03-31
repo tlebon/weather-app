@@ -1,4 +1,4 @@
-import { IDailyTransWeather, ILocationWeather, IWeeklyWeatherResponse } from '../types/api';
+import { IDailyTransWeather, ILocationWeather, IWeeklyWeatherResponse } from '../types';
 import { apiTransformer } from './transformer';
 const APIKEY = process.env.REACT_APP_WEATHER_API;
 
@@ -18,7 +18,7 @@ export default async function getWeather(location: string, isMetric: boolean): P
 		const sevenCurrent: IWeeklyWeatherResponse = await sevenResponse.json();
 		return apiTransformer(sevenCurrent, current, isMetric);
 	}
-	catch (error) {
+	catch {
 		throw new Error('Whoops that didnt work, try again.');
 	}
 }

@@ -1,8 +1,5 @@
-import { IDailyTransWeather, ILocationWeather } from './../types/api.d';
-import { IWeeklyWeatherResponse } from '../types/api';
-// consider importing a library
-//or some better solution than this lookup array
-
+import { IDailyTransWeather, ILocationWeather } from '../types';
+import { IWeeklyWeatherResponse } from '../types';
 
 export const apiTransformer = (weather: IWeeklyWeatherResponse, current: ILocationWeather, isMetric: boolean): IDailyTransWeather[] => {
 

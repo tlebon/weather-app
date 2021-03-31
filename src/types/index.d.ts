@@ -42,7 +42,7 @@ export interface IWeeklyWeatherResponse {
         start:number;
         end:number;
         description:string;
-    }
+    }[]
 }
 
 

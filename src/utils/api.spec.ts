@@ -2,6 +2,24 @@ import getWeather from './api';
 
 
 describe('Api call', () => {
+
+    test('Returns an transformed object if given a city', () => {
+
+        expect(
+            getWeather('Berlin', true)
+        ).resolves.toHaveLength(8);
+
+    });
+
+    test('Returns the correct temperature unit', () => {
+
+        expect(
+            getWeather('Berlin', false)
+        ).resolves.toMatchObject([{
+            isCelcius: false,
+        }]);
+    });
+
     test('throws an error if theres no location', () => {
 
         expect(
@@ -14,7 +32,7 @@ describe('Api call', () => {
 
         expect(
             getWeather('asda', true)
-        ).rejects.toThrow();
+        ).rejects.toThrow('Whoops that didnt work, try again.');
 
     });
 });

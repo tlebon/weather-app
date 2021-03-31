@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IDailyTransWeather } from '../../types/api';
+import { IDailyTransWeather } from '../../types';
 import WeatherDetails from '../WeatherDetails';
 import DailyWeather from './Daily';
 import './index.css';
