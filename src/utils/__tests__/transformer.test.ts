@@ -1,5 +1,5 @@
-import { apiTransformer, tempUnit } from './transformer';
-import { CITYAPIRESPONSE, APIRESPONSE } from './mocks/mockApiResponse';
+import { apiTransformer, tempUnit } from '../transformer';
+import { CITYAPIRESPONSE, APIRESPONSE } from '../__mocks__/mockApiResponse';
 
 const transformedMock = apiTransformer(APIRESPONSE, CITYAPIRESPONSE, true);
 

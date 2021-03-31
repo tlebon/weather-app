@@ -1,4 +1,4 @@
-import getWeather from './api';
+import getWeather from '../api';
 
 
 describe('Api call', () => {
