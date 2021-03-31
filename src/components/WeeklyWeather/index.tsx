@@ -5,13 +5,17 @@ import DailyWeather from './Daily';
 import './index.css';
 
 interface IWeeklyWeather {
-	weather: IDailyTransWeather[];
+    weather: IDailyTransWeather[];
 }
 
 
 const WeeklyWeather: React.FunctionComponent<IWeeklyWeather> = (props) => {
     const { weather } = props;
     const [focused, setFocused] = React.useState<IDailyTransWeather>();
+
+    React.useEffect(() => {
+        setFocused(weather.find((day) => day.day.numeric === focused?.day.numeric));
+    }, [weather]);
 
     const weatherMap = weather.map((day) => (
         <React.Fragment key={day.day.numeric}>
