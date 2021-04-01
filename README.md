@@ -43,7 +43,7 @@ As with any project theres several things that could be improved.
 
 I elected to do the ui from scratch, without using a framework. While i like this decision, it could be optimised more and there is obviously lots of room to improve the design. 
 
-I think the main gap for me right now is the testing and the error handling. I elected to spend a majority of the time building the app and not focus as much on the unit tests/error as I expect only a small range of interactions within the app. In production obviously these would be extended. Full component tests as well as unit tests for all the functions seem like an immediate improvement.
+I think the main gap for me right now is the testing and the error handling. I elected to spend a majority of the time building the app and not focus as much on the unit tests/error as I expect only a small range of interactions within the app. In production obviously these would be extended. Full component tests as well as full unit tests (with mocks) for all the functions seem like an immediate improvement.
 
 I would also extend aria-tags and correct any semantic html errors that are still remaining. 
 
