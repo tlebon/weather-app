@@ -45,9 +45,8 @@ main {
 	border-radius: 5px;
 	border: black solid 3px;
 	box-shadow: 3px 1px 1px rgba(80, 79, 79, 0.253);
-	margin-top: 3em;
+	margin: .3em;
 	padding:4px 7px;
-	margin-bottom: 1em;
 	background-color: white;
 }
 

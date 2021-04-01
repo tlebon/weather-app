@@ -21,7 +21,10 @@ function App(): JSX.Element {
     } else {
       getWeather(location, isMetric)
         .then(data => setWeather(data))
-        .catch(error => setError(error.message));
+        .catch(error => {
+          setWeather([]);
+          setError(error.message);
+        });
     }
   }, [location, isMetric]);
 
@@ -39,10 +42,10 @@ function App(): JSX.Element {
           setLocation={setLocation} />
         <WeeklyWeather weather={weather} />
 
-        {!!weather.length && <button className='units-button'
+        {!!weather.length && <div className='weather-box'><button className='units-button'
           onClick={() => setisMetric(!isMetric)}>
           {isMetric ? 'C' : 'F'}
-        </button>}
+        </button></div>}
       </main>
     </div>
   );
