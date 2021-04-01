@@ -31,7 +31,7 @@ The project is deployed on netlify, you can see a live instance running [here](h
 
 The app was quickly boostrapped with [Create React App](https://github.com/facebook/create-react-app) with typescript, to get me moving quickly on building.
 
-From the initial design elected to show all the days in one section instead of showing the current day as separate. The current day does however display the current temperature and image depending on time. 
+In design I elected to show all the days in one section instead of showing the current day as separate. The current day does however display the current temperature and image depending on time. I also elected to go for a minimal design, with a simple input field and big clickable card buttons for each day. 
 
 As the open weather map api charges 40$ for a month to get the nice endpoints with longer time scales +town recognition (unless I misread), I simply chained two calls together to save time. Theres certainly other solutions for this, possibly geolocation.
 
@@ -39,6 +39,7 @@ The weather api also allows options for icons for different weather. I elected t
 
 
 ## Areas for improvement / Extensions
+
 As with any project theres several things that could be improved.
 
 I elected to do the ui from scratch, without using a framework. While i like this decision, it could be optimised more and there is obviously lots of room to improve the design. 
